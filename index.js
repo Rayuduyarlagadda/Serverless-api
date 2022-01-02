@@ -9,13 +9,13 @@ exports.handler = async function(event) {
   
   
   
-  logger.info("http", event.body);
+  logger.info("THIS IS TEST", event.body);
   // console.log("eventbody type is ", typeof(event.body), event);
   // console.log("body: ", event.body, event.body.sid );
   // console.log("JASON convertsion:, ", JSON.stringify(event.body), JSON.parse(event.body), event);
    
-   logger.info("http: ", event);
-   logger.log("http: ", event.httpMethod);
+   logger.info("http ", event);
+   logger.info("http", event.httpMethod);
    let operation  = event.httpMethod;
    console.log("operation: ", operation);
   let response;
@@ -25,7 +25,7 @@ exports.handler = async function(event) {
       response = await getData(event.queryStringParameters.sid);
       break;
     case event.httpMethod === 'POST': //  && event.path === studentpath:
-      logger.log("eventbodysid: ", event.body);
+      logger.log("http ", event.body);
       response = await saveData(JSON.parse(event.body));
       break;
     case event.httpMethod === 'DELETE' :
