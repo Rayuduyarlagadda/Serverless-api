@@ -14,8 +14,8 @@ exports.handler = async function(event) {
   // console.log("body: ", event.body, event.body.sid );
   // console.log("JASON convertsion:, ", JSON.stringify(event.body), JSON.parse(event.body), event);
    
-   console.log("event: ", event);
-   console.log("event triggered is : ", event.httpMethod);
+   logger.log("event: ", event);
+   logger.log("event triggered is : ", event.httpMethod);
    let operation  = event.httpMethod;
    console.log("operation: ", operation);
   let response;
