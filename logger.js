@@ -11,7 +11,14 @@ const logger = new winston.createLogger({
       timestamp: true,
       colorize: true,
 
-    })
+    }),
+    new winston.createLogger({
+        timestamp: true,
+        colorize: true,
+        level: 'silly',
+        format: winston.format.simple(),
+        transports: [new winston.transports.File({ filename: 'app-error.log'}),],
+      })
   ]
 });
 

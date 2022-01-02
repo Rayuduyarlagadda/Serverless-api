@@ -14,8 +14,7 @@ exports.handler = async function(event) {
   // console.log("body: ", event.body, event.body.sid );
   // console.log("JASON convertsion:, ", JSON.stringify(event.body), JSON.parse(event.body), event);
    
-   logger.httpMethod(event);
-   logger.httpMethod( event.httpMethod);
+   logger.log('info', 'this is testing the log for logger');
    let operation  = event.httpMethod;
    console.log("operation: ", operation);
   let response;
@@ -25,7 +24,7 @@ exports.handler = async function(event) {
       response = await getData(event.queryStringParameters.sid);
       break;
     case event.httpMethod === 'POST': //  && event.path === studentpath:
-      logger.log("http ", event.body);
+      logger.log("http", event.body);
       response = await saveData(JSON.parse(event.body));
       break;
     case event.httpMethod === 'DELETE' :
