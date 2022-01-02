@@ -6,13 +6,14 @@ phases:
     commands:
       - echo "Installing dependencies..."
       - npm install aws-sdk 
+      - npm install winston winston-cloudwatch
   build:
     commands:
       # - echo "Zipping deployment package..."
-      # - cd lib
+      # - cd node_modules
       # - zip -r9 ../deployment_package.zip .
       # - cd ..
-      - zip -g deployment_package.zip index.js,logger.js,package-lock.json
+      - zip -g deployment_package.zip index.js,logger.js,package-lock.json,package.json, node_modules
   post_build:
     commands:
       - echo "Updating lambda Function..."
