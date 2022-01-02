@@ -9,13 +9,13 @@ exports.handler = async function(event) {
   
   
   
-  logger.info("event", event.body);
+  logger.info("http", event.body);
   // console.log("eventbody type is ", typeof(event.body), event);
   // console.log("body: ", event.body, event.body.sid );
   // console.log("JASON convertsion:, ", JSON.stringify(event.body), JSON.parse(event.body), event);
    
-   logger.log("event: ", event);
-   logger.log("event triggered is : ", event.httpMethod);
+   logger.info("http: ", event);
+   logger.log("http: ", event.httpMethod);
    let operation  = event.httpMethod;
    console.log("operation: ", operation);
   let response;
