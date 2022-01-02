@@ -1,7 +1,7 @@
 const aws = require('aws-sdk');
 // const studentpath = '/student';
 const dynamodb = new aws.DynamoDB.DocumentClient();
-const dynamodbTableName = 'Student';
+const dynamodbTableName = 'Student_Information';
 var logger = require('./logger');
 
 
