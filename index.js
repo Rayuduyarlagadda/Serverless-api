@@ -2,7 +2,7 @@ const aws = require('aws-sdk');
 // const studentpath = '/student';
 const dynamodb = new aws.DynamoDB.DocumentClient();
 const dynamodbTableName = 'Student';
-var logger = require('logger.js');
+// var logger = require('logger.js');
 
 
 exports.handler = async function(event) {
