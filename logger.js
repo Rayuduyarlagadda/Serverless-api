@@ -13,7 +13,7 @@ const logger = new winston.Logger({
 });
 
 var config = {
-  logGroupName: 'my-log-group',
+  logGroupName: 'Serverless-api',
   logStreamName: NODE_ENV,
   createLogGroup: false,
   createLogStream: true,
