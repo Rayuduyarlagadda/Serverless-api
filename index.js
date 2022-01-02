@@ -21,15 +21,15 @@ exports.handler = async function(event) {
   let response;
   switch(true) {
     case event.httpMethod === 'GET': // && event.path === studentpath:
-      console.log("inside the get case");
+      logger.info("inside the get case");
       response = await getData(event.queryStringParameters.sid);
       break;
     case event.httpMethod === 'POST': //  && event.path === studentpath:
-      console.log("eventbodysid: ", event.body);
+      logger.log("eventbodysid: ", event.body);
       response = await saveData(JSON.parse(event.body));
       break;
     case event.httpMethod === 'DELETE' :
-      console.log("into the delete case")
+      logger.info("into the delete case")
       response = await deleteData(JSON.parse(event.body).sid);
       break;
     case event.httpMethod === 'PATCH' :
