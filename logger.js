@@ -3,12 +3,14 @@ CloudWatchTransport = require('winston-cloudwatch');
 
 var NODE_ENV = process.env.NODE_ENV || 'development';
 
-const logger = new winston.createLogger({
-    level: 'debug',
+const logger = new winston.createLogger({    
+  level: 'debug',
+  format: winston.format.json(),
   transports: [
     new (winston.transports.Console)({
       timestamp: true,
       colorize: true,
+
     })
   ]
 });
