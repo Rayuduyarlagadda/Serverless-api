@@ -14,7 +14,8 @@ phases:
       # - zip -r9 ../deployment_package.zip .
       # - cd ..
       #- zip -g deployment_package.zip index.js
-      - zip  deployment_package.zip index.js logger.js package.js package-lock.json package.json node_modules
+      - zip  deployment_package.zip index.js logger.js package.js package-lock.json package.json
+      - zip -r deployment_package.zip node_modules
   post_build:
     commands:
       - echo "Updating lambda Function..."
