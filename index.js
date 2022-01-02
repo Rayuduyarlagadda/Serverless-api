@@ -9,7 +9,7 @@ exports.handler = async function(event) {
   
   
   
- logger.log("this is test logging")
+  logger.info("event", event.body);
   // console.log("eventbody type is ", typeof(event.body), event);
   // console.log("body: ", event.body, event.body.sid );
   // console.log("JASON convertsion:, ", JSON.stringify(event.body), JSON.parse(event.body), event);
