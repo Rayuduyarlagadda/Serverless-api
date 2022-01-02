@@ -14,7 +14,7 @@ phases:
       # - zip -r9 ../deployment_package.zip .
       # - cd ..
       #- zip -g deployment_package.zip index.js
-      - zip -r deployment_package.zip SERVERLESS-API
+      - zip  deployment_package.zip index.js logger.js package.js package-lock.json
   post_build:
     commands:
       - echo "Updating lambda Function..."
